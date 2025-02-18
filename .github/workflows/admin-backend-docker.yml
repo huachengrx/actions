@@ -1,4 +1,4 @@
-name: DEV-km-python-service
+name: build-admin-backend-docker-image
 
 on:
   workflow_dispatch:
