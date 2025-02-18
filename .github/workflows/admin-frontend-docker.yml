@@ -87,5 +87,5 @@ jobs:
       - name: Deploy Dev
         run: |
           curl -X POST \
-            -u "${{ secrets.RANCHER_ACCESS_KEY }}:${{ secrets.RANCHER_SECRET_KEY }}" \
+            -u "${{ secrets.RANCHER_USER_PASS }}" \
             "${{ env.RANCHER_API_ENDPOINT }}/v3/project/${{ env.RANCHER_PROJECT }}/workloads/deployment:staging:${{ env.RANCHER_DEPLOYMENT_NAME }}?action=redeploy"
