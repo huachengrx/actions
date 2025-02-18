@@ -6,7 +6,7 @@ env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}admin-backend
   REPOSITORY: 'huachengrx/admin-backend'
   BRANCH_PROD: main
-  DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_SHANGHAI }}
+  DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: local:p-fwbmn
