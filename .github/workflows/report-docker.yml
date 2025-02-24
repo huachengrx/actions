@@ -1,4 +1,4 @@
-name: build-report-frontend-docker-image
+name: build-report-docker-image
 
 on:
   workflow_dispatch:
