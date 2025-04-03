@@ -1,11 +1,13 @@
-name: build-node-service-docker-image
+name: DEV_build-node-service
 
 on:
+  push:
+    branches: [ "dev" ]
   workflow_dispatch:
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}node-service
   REPOSITORY: 'huachengrx/node-service'
-  BRANCH_PROD: main
+  BRANCH_PROD: dev
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}

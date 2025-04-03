@@ -1,11 +1,13 @@
-name: build-report-docker-image
+name: DEV_build-report
 
 on:
+  push:
+    branches: [ "dev" ]
   workflow_dispatch:
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}report
   REPOSITORY: 'huachengrx/report'
-  BRANCH_PROD: main
+  BRANCH_PROD: dev
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}

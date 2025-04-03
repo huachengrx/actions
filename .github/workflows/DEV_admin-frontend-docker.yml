@@ -1,11 +1,13 @@
-name: build-admin-frontend-docker-image
+name: DEV_build-admin-frontend
 
 on:
+  push:
+    branches: [ "dev" ]
   workflow_dispatch:
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}admin-frontend
   REPOSITORY: 'huachengrx/admin-frontend'
-  BRANCH_PROD: main
+  BRANCH_PROD: dev
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
