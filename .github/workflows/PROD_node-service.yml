@@ -1,4 +1,4 @@
-name: PROD_main_build-node-service
+name: PROD_build-node-service
 
 on:
   workflow_dispatch:
