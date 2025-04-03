@@ -1,8 +1,6 @@
 name: PROD_build-admin-frontend
 
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}admin-frontend

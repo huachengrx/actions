@@ -1,8 +1,6 @@
 name: DEV_build-node-service
 
 on:
-  push:
-    branches: [ "dev" ]
   workflow_dispatch:
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}node-service

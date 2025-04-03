@@ -1,8 +1,6 @@
 name: PROD_build-report
 
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
 env:
   DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}report
@@ -85,13 +83,3 @@ jobs:
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE }}:${{ steps.get-sha.outputs.sha }}
           labels: ${{ steps.meta.outputs.labels }}
   #          platforms: linux/amd64,linux/arm64
-
-  dispatch-deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy Dev
-        run: |
-          curl -X POST \
-            -u "${{ secrets.RANCHER_USER_PASS }}" \
-            "${{ env.RANCHER_API_ENDPOINT }}/v3/project/${{ env.RANCHER_PROJECT }}/workloads/deployment:${{ env.RANCHER_DEPLOYMENT_NAME }}?action=redeploy"
