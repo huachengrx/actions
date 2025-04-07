@@ -16,6 +16,22 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - name: post message
+        uses: foxundermoon/feishu-action@v2
+        with:
+          url: https://open.feishu.cn/open-apis/bot/v2/hook/19800291-b192-440e-b9e8-890450babc6f
+          msg_type: post
+          content: |
+            post:
+            zh_cn:
+            title: 开始发版-开发环境 node-service
+            content:
+            - - tag: a
+                text: 查看发版详情
+                href: https://github.com/huachengrx/actions/actions/workflows/DEV_node-service.yml
+              - tag: a
+                text: 查看rancher-deployment
+                href: https://rancher.22ies.com/dashboard/c/local/explorer/apps.deployment/prod/node-service
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -67,3 +83,19 @@ jobs:
           curl -X POST \
             -u "${{ secrets.RANCHER_USER_PASS }}" \
             "${{ env.RANCHER_API_ENDPOINT }}/v3/project/${{ env.RANCHER_PROJECT }}/workloads/deployment:${{ env.RANCHER_DEPLOYMENT_NAME }}?action=redeploy"
+      - name: post message
+        uses: foxundermoon/feishu-action@v2
+        with:
+          url: https://open.feishu.cn/open-apis/bot/v2/hook/19800291-b192-440e-b9e8-890450babc6f
+          msg_type: post
+          content: |
+            post:
+            zh_cn:
+            title: 发版完成-开发环境 node-service
+            content:
+            - - tag: a
+                text: 查看发版详情
+                href: https://github.com/huachengrx/actions/actions/workflows/DEV_node-service.yml
+              - tag: a
+                text: 查看rancher-deployment
+                href: https://rancher.22ies.com/dashboard/c/local/explorer/apps.deployment/prod/node-service

@@ -94,11 +94,11 @@ jobs:
           content: |
             post:
               zh_cn:
-                title: 发版完成-测试环境 python 后端
+                title: 发版完成-开发环境 python 后端
                 content:
                 - - tag: text
                     un_escape: true
-                    text: '发版完成-测试环境 python 后端'
+                    text: '发版完成-开发环境 python 后端'
                   - tag: a
                     text: 查看发版详情
                     href: https://github.com/huachengrx/actions/actions/workflows/DEV_admin-backend-docker.yml
