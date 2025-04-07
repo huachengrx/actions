@@ -26,7 +26,10 @@ jobs:
             zh_cn:
             title: 开始发版-开发环境 report
             content:
-            - - tag: a
+            - - tag: text
+                un_escape: true
+                text: '开始发版-开发环境 report'
+              - tag: a
                 text: 查看发版详情
                 href: https://github.com/huachengrx/actions/actions/workflows/DEV_report-docker.yml
               - tag: a
@@ -119,7 +122,10 @@ jobs:
             zh_cn:
             title: 发版完成-开发环境 report
             content:
-            - - tag: a
+            - - tag: text
+                un_escape: true
+                text: '发版完成-开发环境 report'
+              - tag: a
                 text: 查看发版详情
                 href: https://github.com/huachengrx/actions/actions/workflows/DEV_report-docker.yml
               - tag: a
