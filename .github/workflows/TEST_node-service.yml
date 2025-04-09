@@ -1,16 +1,16 @@
-name: DEV_build-admin-backend
+name: TEST_build-node-service
 
 on:
   workflow_dispatch:
 env:
-  DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}admin-backend
-  REPOSITORY: 'huachengrx/admin-backend'
-  BRANCH_PROD: dev
+  DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}node-service
+  REPOSITORY: 'huachengrx/node-service'
+  BRANCH_PROD: test
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-9fqdgvkm:p-pvkqn
-  RANCHER_DEPLOYMENT_NAME: develop:admin-python-be
+  RANCHER_DEPLOYMENT_NAME: test:node-service
 
 jobs:
   build-and-push:
@@ -23,24 +23,25 @@ jobs:
           msg_type: post
           content: |
             post:
-              zh_cn:
-                title: 开始发版-开发环境 python 后端
-                content:
-                - - tag: text
-                    un_escape: true
-                    text: '开始发版-开发环境 python 后端'
-                  - tag: a
-                    text: 查看发版详情
-                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_admin-backend-docker.yml
-                  - tag: a
-                    text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/admin-python-be
+            zh_cn:
+            title: 开始发版-开发环境 node-service
+            content:
+            - - tag: text
+                un_escape: true
+                text: '开始发版-开发环境 node-service'
+              - tag: a
+                text: 查看发版详情
+                href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
+              - tag: a
+                text: 查看rancher-deployment
+                href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/node-service
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
           repository: ${{ env.REPOSITORY }}
           ref: ${{ env.BRANCH_PROD }}
           token: ${{ secrets.ACTION_TOKEN }}
+          node-version: 20
 
       - name: Get the latest commit SHA of the repository
         id: get-sha
@@ -67,9 +68,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          build-args: REACT_APP_COMMIT_ID=${{ steps.get-sha.outputs.sha }}
           push: true
-          file: ./docker/Dockerfile
+          file: ./Dockerfile
           tags: |
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE }}:${{ env.BRANCH_PROD }}
             ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_IMAGE }}:${{ env.BRANCH_PROD }}-${{ steps.current-date.outputs.date }}
@@ -93,15 +93,15 @@ jobs:
           msg_type: post
           content: |
             post:
-              zh_cn:
-                title: 发版完成-开发环境 python 后端
-                content:
-                - - tag: text
-                    un_escape: true
-                    text: '发版完成-开发环境 python 后端'
-                  - tag: a
-                    text: 查看发版详情
-                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_admin-backend-docker.yml
-                  - tag: a
-                    text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/admin-python-be
+            zh_cn:
+            title: 发版完成-开发环境 node-service
+            content:
+            - - tag: text
+                un_escape: true
+                text: '发版完成-开发环境 node-service'
+              - tag: a
+                text: 查看发版详情
+                href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
+              - tag: a
+                text: 查看rancher-deployment
+                href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/node-service

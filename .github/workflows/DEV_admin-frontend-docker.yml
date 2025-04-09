@@ -34,7 +34,7 @@ jobs:
                     href: https://github.com/huachengrx/actions/actions/workflows/DEV_admin-frontend-docker.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher.22ies.com/dashboard/c/local/explorer/apps.deployment/prod/admin-fe
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/admin-fe
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -126,4 +126,4 @@ jobs:
                     href: https://github.com/huachengrx/actions/actions/workflows/DEV_admin-frontend-docker.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher.22ies.com/dashboard/c/local/explorer/apps.deployment/prod/admin-fe
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/admin-fe

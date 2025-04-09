@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-9fqdgvkm:p-pvkqn
-  RANCHER_DEPLOYMENT_NAME: prod:node-service
+  RANCHER_DEPLOYMENT_NAME: develop:node-service
 
 jobs:
   build-and-push:
@@ -34,7 +34,7 @@ jobs:
                 href: https://github.com/huachengrx/actions/actions/workflows/DEV_node-service.yml
               - tag: a
                 text: 查看rancher-deployment
-                href: https://rancher.22ies.com/dashboard/c/local/explorer/apps.deployment/prod/node-service
+                href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/node-service
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -104,4 +104,4 @@ jobs:
                 href: https://github.com/huachengrx/actions/actions/workflows/DEV_node-service.yml
               - tag: a
                 text: 查看rancher-deployment
-                href: https://rancher.22ies.com/dashboard/c/local/explorer/apps.deployment/prod/node-service
+                href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/node-service
