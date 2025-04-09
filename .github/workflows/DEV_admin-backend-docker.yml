@@ -9,8 +9,8 @@ env:
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
-  RANCHER_PROJECT: local:p-fwbmn
-  RANCHER_DEPLOYMENT_NAME: prod:admin-python-be
+  RANCHER_PROJECT: c-m-9fqdgvkm:p-pvkqn
+  RANCHER_DEPLOYMENT_NAME: develop:admin-python-be
 
 jobs:
   build-and-push:
