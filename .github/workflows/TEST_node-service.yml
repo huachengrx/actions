@@ -23,18 +23,18 @@ jobs:
           msg_type: post
           content: |
             post:
-            zh_cn:
-            title: 开始发版-测试TEST环境 node-service
-            content:
-            - - tag: text
-                un_escape: true
-                text: '开始发版-测试TEST环境 node-service'
-              - tag: a
-                text: 查看发版详情
-                href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
-              - tag: a
-                text: 查看rancher-deployment
-                href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/node-service
+              zh_cn:
+                title: 开始发版-测试TEST环境 node-service
+                content:
+                - - tag: text
+                    un_escape: true
+                    text: '开始发版-测试TEST环境 node-service'
+                  - tag: a
+                    text: 查看发版详情
+                    href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
+                  - tag: a
+                    text: 查看rancher-deployment
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/node-service
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -93,15 +93,15 @@ jobs:
           msg_type: post
           content: |
             post:
-            zh_cn:
-            title: 发版完成-测试TEST环境 node-service
-            content:
-            - - tag: text
-                un_escape: true
-                text: '发版完成-测试TEST环境 node-service'
-              - tag: a
-                text: 查看发版详情
-                href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
-              - tag: a
-                text: 查看rancher-deployment
-                href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/node-service
+              zh_cn:
+                title: 发版完成-测试TEST环境 node-service
+                content:
+                - - tag: text
+                    un_escape: true
+                    text: '发版完成-测试TEST环境 node-service'
+                  - tag: a
+                    text: 查看发版详情
+                    href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
+                  - tag: a
+                    text: 查看rancher-deployment
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/node-service
