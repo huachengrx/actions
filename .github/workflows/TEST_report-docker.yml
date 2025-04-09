@@ -24,11 +24,11 @@ jobs:
           content: |
             post:
             zh_cn:
-            title: 开始发版-开发环境 report
+            title: 开始发版-测试TEST环境 report
             content:
             - - tag: text
                 un_escape: true
-                text: '开始发版-开发环境 report'
+                text: '开始发版-测试TEST环境 report'
               - tag: a
                 text: 查看发版详情
                 href: https://github.com/huachengrx/actions/actions/workflows/TEST_report-docker.yml
@@ -120,11 +120,11 @@ jobs:
           content: |
             post:
             zh_cn:
-            title: 发版完成-开发环境 report
+            title: 发版完成-测试TEST环境 report
             content:
             - - tag: text
                 un_escape: true
-                text: '发版完成-开发环境 report'
+                text: '发版完成-测试TEST环境 report'
               - tag: a
                 text: 查看发版详情
                 href: https://github.com/huachengrx/actions/actions/workflows/TEST_report-docker.yml

@@ -24,11 +24,11 @@ jobs:
           content: |
             post:
             zh_cn:
-            title: 开始发版-开发环境 node-service
+            title: 开始发版-测试TEST环境 node-service
             content:
             - - tag: text
                 un_escape: true
-                text: '开始发版-开发环境 node-service'
+                text: '开始发版-测试TEST环境 node-service'
               - tag: a
                 text: 查看发版详情
                 href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
@@ -94,11 +94,11 @@ jobs:
           content: |
             post:
             zh_cn:
-            title: 发版完成-开发环境 node-service
+            title: 发版完成-测试TEST环境 node-service
             content:
             - - tag: text
                 un_escape: true
-                text: '发版完成-开发环境 node-service'
+                text: '发版完成-测试TEST环境 node-service'
               - tag: a
                 text: 查看发版详情
                 href: https://github.com/huachengrx/actions/actions/workflows/TEST_node-service.yml
