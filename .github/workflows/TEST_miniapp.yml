@@ -143,7 +143,7 @@ jobs:
                 {
                   "tag": "div",
                   "text": {
-                    "content": "​**​版本号​**​: ${version}\n\n​**​最近提交​**​: ${commit_info}",
+                    "content": " ** 版本号 ** : ${version}\n\n ** 最近提交 ** : ${commit_info}",
                     "tag": "lark_md"
                   }
                 },
@@ -172,7 +172,7 @@ jobs:
               ],
               "header": {
                 "title": {
-                  "content": "🚀 小程序预览版已生成",
+                  "content": "🚀 小程序体验版已生成",
                   "tag": "plain_text"
                 },
                 "template": "blue"
