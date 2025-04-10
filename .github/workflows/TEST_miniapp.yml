@@ -34,13 +34,13 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         id: pnpm-install
         with:
-          version: 8.14.1
+          version: 10.4.0
           run_install: false
 
       - name: Get pnpm store directory
@@ -63,7 +63,7 @@ jobs:
 
       - name: Compile MiniProgram
         id: preview
-        uses: ll929/miniprogram-action@2.0.0
+        uses: crazyurus/miniprogram-action@2.0.0
         with:
           action_type: preview
           project_path: ./dist
