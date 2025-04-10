@@ -63,7 +63,7 @@ jobs:
 
       - name: Compile MiniProgram
         id: preview
-        uses: action-wechat-miniprogram-upload@1.0.1
+        uses: action-wechat-miniprogram-upload
         with:
           action_type: preview
           workspace: ./dist
