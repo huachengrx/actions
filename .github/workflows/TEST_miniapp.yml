@@ -63,13 +63,12 @@ jobs:
 
       - name: Compile MiniProgram
         id: preview
-        uses: action-wechat-miniprogram-upload
+        uses: crazyurus/miniprogram-action@2.0.0
         with:
           action_type: preview
-          workspace: ./dist
+          project_path: ./dist
           version: ${{ steps.current-date.outputs.date }}${{ steps.get-sha.outputs.sha }}
           description: ${{ steps.last-commits.outputs.commits }}
-          upload_key: ${{ secrets.WAPP_PRIVATE_KEY }}
           ci: 24
         env:
           PRIVATE_KEY: ${{ secrets.WAPP_PRIVATE_KEY }}
