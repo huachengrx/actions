@@ -47,7 +47,7 @@ jobs:
           ENV=${{env.ENV}} \
           DESC="$DESC_ESCAPED" \
           CHAT_IDS=${{env.CHAT_IDS}} \
-          FS_GITHUB_APP_ID=${{env.FEISHU_APP_GITHUB_ID}} \
-          FS_GITHUB_SECRET=${{secrets.FEISHU_APP_GITHUB_SECRET}} \
+          FEISHU_APP_GITHUB_ID=${{env.FEISHU_APP_GITHUB_ID}} \
+          FEISHU_APP_GITHUB_SECRET=${{secrets.FEISHU_APP_GITHUB_SECRET}} \
           PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} \
           npm run upload
