@@ -72,4 +72,4 @@ jobs:
           FS_GITHUB_APP_ID=${{secrets.FEISHU_APP_ID}} \
           FS_GITHUB_SECRET=${{secrets.FEISHU_APP_SECRET}} \
           PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} \
-          ts-node scripts/upload.ts
+          pnpm dlx ts-node scripts/upload.ts
