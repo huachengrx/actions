@@ -5,6 +5,7 @@ env:
   BRANCH_PROD: feat-bot
   REPOSITORY: 'huachengrx/miniapp'
   CHAT_IDS: 'oc_107f404e7d4920100c6cf70246215ca3'
+  FEISHU_APP_GITHUB_ID: 'cli_a6966acc9169100b'
   ENV: dev
 jobs:
   build-and-push:
@@ -46,7 +47,7 @@ jobs:
           ENV=${{env.ENV}} \
           DESC="$DESC_ESCAPED" \
           CHAT_IDS=${{env.CHAT_IDS}} \
-          FS_GITHUB_APP_ID=${{secrets.FEISHU_APP_ID}} \
-          FS_GITHUB_SECRET=${{secrets.FEISHU_APP_SECRET}} \
+          FS_GITHUB_APP_ID=${{env.FEISHU_APP_GITHUB_ID}} \
+          FS_GITHUB_SECRET=${{secrets.FEISHU_APP_GITHUB_SECRET}} \
           PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} \
           npm run upload
