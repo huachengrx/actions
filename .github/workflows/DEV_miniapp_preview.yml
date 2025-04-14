@@ -64,4 +64,12 @@ jobs:
       - name: Upload and Preview MiniProgram
         id: preview
         run: |
-          CI=true ENV=${{env.ENV}} DESC=${{steps.last-commits.outputs.commits}} CHAT_IDS=${{env.CHAT_IDS}} FS_GITHUB_APP_ID=${{secrets.FEISHU_APP_ID}} FS_GITHUB_SECRET=${{secrets.FEISHU_APP_SECRET}} PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} ts-node scripts/upload.ts
+          DESC_ESCAPED=$(echo '${{steps.last-commits.outputs.commits}}' | sed "s/'/\\\\'/g")
+          CI=true \
+          ENV=${{env.ENV}} \
+          DESC="$DESC_ESCAPED" \
+          CHAT_IDS=${{env.CHAT_IDS}} \
+          FS_GITHUB_APP_ID=${{secrets.FEISHU_APP_ID}} \
+          FS_GITHUB_SECRET=${{secrets.FEISHU_APP_SECRET}} \
+          PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} \
+          ts-node scripts/upload.ts
