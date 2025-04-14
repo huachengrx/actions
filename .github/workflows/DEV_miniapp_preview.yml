@@ -1,0 +1,67 @@
+name: DEV_miniapp_preview
+on:
+  workflow_dispatch:
+env:
+  BRANCH_PROD: dev
+  REPOSITORY: 'huachengrx/miniapp'
+  CHAT_IDS: 'oc_107f404e7d4920100c6cf70246215ca3'
+  ENV: dev
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ env.REPOSITORY }}
+          ref: ${{ env.BRANCH_PROD }}
+          token: ${{ secrets.ACTION_TOKEN }}
+          node-version: 22
+
+      - name: Get the latest commit SHA of the repository
+        id: get-sha
+        run: echo "sha=$(git rev-parse --short=7 HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Get current date
+        id: current-date
+        run: echo "date=$(TZ=Asia/Shanghai date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: Get last few commits
+        id: last-commits
+        run: |
+          commits=$(git log -n 3 --pretty=format:"%h - %s" | tr '\n' ' ' | cut -c 1-100)
+          echo "commits=${commits}" >> $GITHUB_OUTPUT
+
+      - name: Write private key to file
+        run: |
+          echo "${{ secrets.WAPP_PRIVATE_KEY }}" > private.key
+          echo "PRIVATE_KEY_PATH=$(pwd)/private.key" >> $GITHUB_ENV
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Build MiniProgram
+        run: |
+          pnpm i
+          pnpm build:weapp
+
+      - name: Upload and Preview MiniProgram
+        id: preview
+        run: |
+          CI=true ENV=${{env.ENV}} DESC=${{steps.last-commits.outputs.commits}} CHAT_IDS=${{env.CHAT_IDS}} FS_GITHUB_APP_ID=${{secrets.FEISHU_APP_ID}} FS_GITHUB_SECRET=${{secrets.FEISHU_APP_SECRET}} PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} ts-node scripts/upload.ts
