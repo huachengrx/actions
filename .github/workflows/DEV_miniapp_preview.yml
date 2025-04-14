@@ -58,8 +58,8 @@ jobs:
 
       - name: Build and Upload and Preview MiniProgram
         run: |
-          npm i
-          npm run build:weapp
+          pnpm i
+          pnpm build:weapp
           DESC_ESCAPED=$(echo '${{steps.last-commits.outputs.commits}}' | sed "s/'/\\\\'/g")
           CI=true \
           ENV=${{env.ENV}} \
@@ -68,4 +68,4 @@ jobs:
           FS_GITHUB_APP_ID=${{secrets.FEISHU_APP_ID}} \
           FS_GITHUB_SECRET=${{secrets.FEISHU_APP_SECRET}} \
           PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}} \
-          npx ts-node scripts/upload.ts
+          pnpm upload
