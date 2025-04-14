@@ -37,6 +37,12 @@ jobs:
           echo "${{ secrets.WAPP_PRIVATE_KEY }}" > private.key
           echo "PRIVATE_KEY_PATH=$(pwd)/private.key" >> $GITHUB_ENV
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        id: pnpm-install
+        with:
+          run_install: false
+
       - name: Build and Upload and Preview MiniProgram
         run: |
           pnpm i
