@@ -37,25 +37,6 @@ jobs:
           echo "${{ secrets.WAPP_PRIVATE_KEY }}" > private.key
           echo "PRIVATE_KEY_PATH=$(pwd)/private.key" >> $GITHUB_ENV
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        id: pnpm-install
-        with:
-          run_install: false
-
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
       - name: Build and Upload and Preview MiniProgram
         run: |
           pnpm i
