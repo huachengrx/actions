@@ -1,4 +1,4 @@
-name: DEV_miniapp_preview
+name: TEST_miniapp_preview
 on:
   workflow_dispatch:
 env:
