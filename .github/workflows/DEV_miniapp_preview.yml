@@ -2,7 +2,7 @@ name: DEV_miniapp_preview
 on:
   workflow_dispatch:
 env:
-  BRANCH_PROD: dev
+  BRANCH_PROD: feat-bot
   REPOSITORY: 'huachengrx/miniapp'
   CHAT_IDS: 'oc_107f404e7d4920100c6cf70246215ca3'
   ENV: dev
