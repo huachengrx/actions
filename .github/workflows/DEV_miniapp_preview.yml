@@ -56,14 +56,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - name: Build MiniProgram
+      - name: Build and Upload and Preview MiniProgram
         run: |
           pnpm i
           pnpm build:weapp
-
-      - name: Upload and Preview MiniProgram
-        id: preview
-        run: |
           DESC_ESCAPED=$(echo '${{steps.last-commits.outputs.commits}}' | sed "s/'/\\\\'/g")
           CI=true \
           ENV=${{env.ENV}} \
