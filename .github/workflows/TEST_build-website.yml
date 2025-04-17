@@ -1,16 +1,16 @@
-name: DEV_build-report
+name: DEV_build-website
 
 on:
   workflow_dispatch:
 env:
-  DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}report
-  REPOSITORY: 'huachengrx/report'
-  BRANCH_PROD: dev
+  DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}website
+  REPOSITORY: 'huachengrx/website'
+  BRANCH_PROD: test
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-9fqdgvkm:p-pvkqn
-  RANCHER_DEPLOYMENT_NAME: develop:report
+  RANCHER_DEPLOYMENT_NAME: develop:website
 
 jobs:
   build-and-push:
@@ -23,18 +23,18 @@ jobs:
           msg_type: post
           content: |
             post:
-              zh_cn:
-                title: 开始发版-开发环境 report
-                content:
-                - - tag: text
-                    un_escape: true
-                    text: '开始发版-开发环境 report'
-                  - tag: a
-                    text: 查看发版详情
-                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_report-docker.yml
-                  - tag: a
-                    text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/report
+            zh_cn:
+              title: 开始发版-开发环境 website
+              content:
+              - - tag: text
+                  un_escape: true
+                  text: '开始发版-开发环境 website'
+                - tag: a
+                  text: 查看发版详情
+                  href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
+                - tag: a
+                  text: 查看rancher-deployment
+                  href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/website
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -119,15 +119,15 @@ jobs:
           msg_type: post
           content: |
             post:
-              zh_cn:
-                title: 发版完成-开发环境 report
-                content:
-                - - tag: text
-                    un_escape: true
-                    text: '发版完成-开发环境 report'
-                  - tag: a
-                    text: 查看发版详情
-                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_report-docker.yml
-                  - tag: a
-                    text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/report
+            zh_cn:
+              title: 开始发版-开发环境 website
+              content:
+              - - tag: text
+                  un_escape: true
+                  text: '开始发版-开发环境 website'
+                - tag: a
+                  text: 查看发版详情
+                  href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
+                - tag: a
+                  text: 查看rancher-deployment
+                  href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/website

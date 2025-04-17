@@ -3,7 +3,7 @@ name: DEV_build-website
 on:
   workflow_dispatch:
 env:
-  DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}report
+  DOCKER_IMAGE: ${{ vars.DOCKER_WORKSPACE }}website
   REPOSITORY: 'huachengrx/website'
   BRANCH_PROD: dev
   DOCKER_REGISTRY: ${{ vars.DOCKER_REGISTRY_HEYUAN }}
