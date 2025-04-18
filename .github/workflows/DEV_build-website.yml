@@ -23,18 +23,18 @@ jobs:
           msg_type: post
           content: |
             post:
-            zh_cn:
-              title: 开始发版-开发环境 website
-              content:
-              - - tag: text
-                  un_escape: true
-                  text: '开始发版-开发环境 website'
-                - tag: a
-                  text: 查看发版详情
-                  href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-website.yml
-                - tag: a
-                  text: 查看rancher-deployment
-                  href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/website
+              zh_cn:
+                title: 开始发版-开发环境 website
+                content:
+                - - tag: text
+                    un_escape: true
+                    text: '开始发版-开发环境 website'
+                  - tag: a
+                    text: 查看发版详情
+                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-website.yml
+                  - tag: a
+                    text: 查看rancher-deployment
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/website
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -94,15 +94,15 @@ jobs:
           msg_type: post
           content: |
             post:
-            zh_cn:
-              title: 开始发版-开发环境 website
-              content:
-              - - tag: text
-                  un_escape: true
-                  text: '开始发版-开发环境 website'
-                - tag: a
-                  text: 查看发版详情
-                  href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-website.yml
-                - tag: a
-                  text: 查看rancher-deployment
-                  href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/website
+              zh_cn:
+                title: 开始发版-开发环境 website
+                content:
+                - - tag: text
+                    un_escape: true
+                    text: '开始发版-开发环境 website'
+                  - tag: a
+                    text: 查看发版详情
+                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-website.yml
+                  - tag: a
+                    text: 查看rancher-deployment
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/develop/website
