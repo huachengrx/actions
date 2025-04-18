@@ -1,4 +1,4 @@
-name: DEV_build-website
+name: TEST_build-website
 
 on:
   workflow_dispatch:
