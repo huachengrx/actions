@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-9fqdgvkm:p-pvkqn
-  RANCHER_DEPLOYMENT_NAME: develop:website
+  RANCHER_DEPLOYMENT_NAME: test:website
 
 jobs:
   build-and-push:
@@ -23,18 +23,18 @@ jobs:
           msg_type: post
           content: |
             post:
-            zh_cn:
-              title: 开始发版-开发环境 website
-              content:
-              - - tag: text
-                  un_escape: true
-                  text: '开始发版-开发环境 website'
-                - tag: a
-                  text: 查看发版详情
-                  href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
-                - tag: a
-                  text: 查看rancher-deployment
-                  href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/website
+              zh_cn:
+                title: 开始发版-测试环境 website
+                content:
+                - - tag: text
+                    un_escape: true
+                    text: '开始发版-测试环境 website'
+                  - tag: a
+                    text: 查看发版详情
+                    href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
+                  - tag: a
+                    text: 查看rancher-deployment
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/website
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -50,31 +50,6 @@ jobs:
       - name: Get current date
         id: current-date
         run: echo "::set-output name=date::$(TZ=Asia/Shanghai date +'%Y-%m-%d-%H-%M-%S')"
-        
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          run_install: false
-#          version: 10.4.0
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: pnpm Install
-        run: pnpm install
-
-      - name: Build
-        run: pnpm run build
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -119,15 +94,15 @@ jobs:
           msg_type: post
           content: |
             post:
-            zh_cn:
-              title: 开始发版-开发环境 website
-              content:
-              - - tag: text
-                  un_escape: true
-                  text: '开始发版-开发环境 website'
-                - tag: a
-                  text: 查看发版详情
-                  href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
-                - tag: a
-                  text: 查看rancher-deployment
-                  href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/website
+              zh_cn:
+                title: 开始发版-测试环境 website
+                content:
+                - - tag: text
+                    un_escape: true
+                    text: '开始发版-测试环境 website'
+                  - tag: a
+                    text: 查看发版详情
+                    href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
+                  - tag: a
+                    text: 查看rancher-deployment
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-9fqdgvkm/explorer/apps.deployment/test/website
