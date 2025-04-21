@@ -95,11 +95,11 @@ jobs:
           content: |
             post:
               zh_cn:
-                title: 开始发版-测试环境 website
+                title: 完成发版-测试环境 website
                 content:
                 - - tag: text
                     un_escape: true
-                    text: '开始发版-测试环境 website'
+                    text: '完成发版-测试环境 website'
                   - tag: a
                     text: 查看发版详情
                     href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-website.yml
