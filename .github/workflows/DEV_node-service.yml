@@ -11,7 +11,7 @@ env:
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-qjl5cqb6:p-h97w4
   RANCHER_DEPLOYMENT_NAME: develop:node-service
-  RANCHER_DEPLOYMENT_NAME_WORKER: test:node-worker
+  RANCHER_DEPLOYMENT_NAME_WORKER: develop:node-worker
 
 jobs:
   build-and-push:
