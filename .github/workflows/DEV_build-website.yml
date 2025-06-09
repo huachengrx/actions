@@ -54,6 +54,7 @@ jobs:
         name: Install pnpm
         with:
           run_install: false
+          version: 10.4.0
 
 
       - name: Get pnpm store directory
