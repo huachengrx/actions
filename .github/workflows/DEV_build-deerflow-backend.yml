@@ -31,7 +31,7 @@ jobs:
                     text: '开始发版-开发环境 deer-flow 后端'
                   - tag: a
                     text: 查看发版详情
-                    href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-deerflow-backend.yml
+                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-deerflow-backend.yml
                   - tag: a
                     text: 查看rancher-deployment
                     href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/dev/deerflow-backend
