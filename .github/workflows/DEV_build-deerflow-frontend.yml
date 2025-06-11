@@ -34,7 +34,7 @@ jobs:
                     href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-deerflow-frontend.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/devlop/deerflow-frontend
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/develop/deerflow-frontend
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -104,4 +104,4 @@ jobs:
                     href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-deerflow-frontend.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/devlop/deerflow-frontend
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/develop/deerflow-frontend
