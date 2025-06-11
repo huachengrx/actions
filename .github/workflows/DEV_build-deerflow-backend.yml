@@ -1,4 +1,4 @@
-name: TEST_build-deerflow-backend
+name: DEV_build-deerflow-backend
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-qjl5cqb6:p-h97w4
-  RANCHER_DEPLOYMENT_NAME: test:deerflow-backend
+  RANCHER_DEPLOYMENT_NAME: dev:deerflow-backend
 
 jobs:
   build-and-push:
@@ -24,17 +24,17 @@ jobs:
           content: |
             post:
               zh_cn:
-                title: 开始发版-测试TEST环境 deer-flow 后端
+                title: 开始发版-开发环境 deer-flow 后端
                 content:
                 - - tag: text
                     un_escape: true
-                    text: '开始发版-测试TEST环境 deer-flow 后端'
+                    text: '开始发版-开发环境 deer-flow 后端'
                   - tag: a
                     text: 查看发版详情
                     href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-deerflow-backend.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/test/deerflow-backend
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/dev/deerflow-backend
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -94,14 +94,14 @@ jobs:
           content: |
             post:
               zh_cn:
-                title: 发版完成-测试TEST环境 deer-flow 后端
+                title: 发版完成-开发环境 deer-flow 后端
                 content:
                 - - tag: text
                     un_escape: true
-                    text: '发版完成-测试TEST环境 deer-flow 后端'
+                    text: '发版完成-开发环境 deer-flow 后端'
                   - tag: a
                     text: 查看发版详情
-                    href: https://github.com/huachengrx/actions/actions/workflows/TEST_build-deerflow-backend.yml
+                    href: https://github.com/huachengrx/actions/actions/workflows/DEV_build-deerflow-backend.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/test/deerflow-backend
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/dev/deerflow-backend
