@@ -10,7 +10,7 @@ env:
   DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-qjl5cqb6:p-h97w4
-  RANCHER_DEPLOYMENT_NAME: dev:deerflow-backend
+  RANCHER_DEPLOYMENT_NAME: develop:deerflow-backend
 
 jobs:
   build-and-push:
