@@ -11,6 +11,7 @@ env:
   RANCHER_API_ENDPOINT: ${{ secrets.RANCHER_API_ENDPOINT }}
   RANCHER_PROJECT: c-m-qjl5cqb6:p-h97w4
   RANCHER_DEPLOYMENT_NAME: dev:deerflow-frontend
+  NEXT_PUBLIC_API_URL: https://df-api.dev.22ies.com/api
 
 jobs:
   build-and-push:
@@ -67,7 +68,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./web
-          build-args: REACT_APP_COMMIT_ID=${{ steps.get-sha.outputs.sha }}
+          build-args: |
+            REACT_APP_COMMIT_ID=${{ steps.get-sha.outputs.sha }}
+            NEXT_PUBLIC_API_URL=${{ env.NEXT_PUBLIC_API_URL }}
           push: true
           file: ./web/Dockerfile
           tags: |
