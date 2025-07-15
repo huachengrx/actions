@@ -104,11 +104,11 @@ jobs:
           content: |
             post:
               zh_cn:
-                title: 开始发版-正式环境 官网
+                title: 完成发版-正式环境 官网
                 content:
                 - - tag: text
                     un_escape: true
-                    text: '开始发版-正式环境 官网'
+                    text: '完成发版-正式环境 官网'
                   - tag: a
                     text: 查看发版详情
                     href: https://github.com/huachengrx/actions/actions/workflows/PROD_build-website.yml
