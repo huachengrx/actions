@@ -1,4 +1,4 @@
-name: DEV_build-ragflow-wrap
+name: PROD_build-ragflow-wrap
 
 on:
   workflow_dispatch:
