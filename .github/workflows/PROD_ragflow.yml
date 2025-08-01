@@ -30,7 +30,7 @@ jobs:
                     href: https://github.com/huachengrx/actions/actions/workflows/PROD_ragflow.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/prod/ragflow-server
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-wr9z8wfl/explorer/apps.deployment/prod/ragflow-server
       - name: Checkout the repository
         uses: actions/checkout@v3
         with:
@@ -96,4 +96,4 @@ jobs:
                     href: https://github.com/huachengrx/actions/actions/workflows/PROD_ragflow.yml
                   - tag: a
                     text: 查看rancher-deployment
-                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-qjl5cqb6/explorer/apps.deployment/develop/ragflow-server
+                    href: https://rancher-prod.22ies.com/dashboard/c/c-m-wr9z8wfl/explorer/apps.deployment/prod/ragflow-server
