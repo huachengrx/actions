@@ -1,4 +1,4 @@
-name: DEV_build-report
+name: DEV_build-ragflow-wrap
 
 on:
   workflow_dispatch:
